@@ -75,5 +75,5 @@ class character(object):
                +" \n化学: %.2f" % round(self.chemistry, 2) \
                + "\n生物: %.2f" % round(self.biology, 2)\
                + "\n文综: %.2f" % round(self.geography + self.political + self.history, 2) \
-               + "\n理综: %.2f" % round(self.physics + self.chemistry + self.biology, 2)
+               + "\n理综: %.2f\n" % round(self.physics + self.chemistry + self.biology, 2)
 
