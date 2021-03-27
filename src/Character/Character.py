@@ -37,9 +37,9 @@ class character(object):
         self.political = political # 政治
         self.history = history # 历史
         self.geography = geography # 地理
-        #self.physics = physics #物理
-        #self.chemistry = chemistry #化学
-        #self.biology = biology #生物
+        self.physics = physics #物理
+        self.chemistry = chemistry #化学
+        self.biology = biology #生物
 
     def update_attribute(self):
         for change in self.traits.attributes_positive_result:

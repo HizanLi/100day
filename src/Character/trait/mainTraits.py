@@ -72,7 +72,6 @@ class mainTraits(object):  # 人物特性
         count = 0
         if difficulty == 'hard':
             time = 2
-
         elif difficulty == 'easy':
             time = 0
         else:

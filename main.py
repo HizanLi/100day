@@ -2,6 +2,7 @@ from src.Character.player.mainPlayer import mainPlayer
 from src.Event.mainEvent import mainPlayer
 import datetime
 import copy
+import random
 
 class game(object):
 
@@ -36,8 +37,6 @@ class game(object):
     def final_test(self):
         final_test = datetime.datetime(2016,6,7)
 
-    def get_event_info(self,date):
-        return date.strftime("%B") +" "+ date.strftime("%d") +", "+date.strftime("%Y")+ ' '+ date.strftime("%A")
     # initialize_
 
 
@@ -47,8 +46,6 @@ def main():
     print(ge.player.get_character_status())
     ge.oneDayPass()
     print(ge.player.get_character_status())
-
-    print(ge.get_event_info(datetime.datetime(2015,9,30)))
 
 
 
