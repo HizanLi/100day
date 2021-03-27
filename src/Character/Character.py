@@ -63,4 +63,14 @@ class character(object):
                + "\n智力: " + str(self.intelligence) \
                + "\n人物状态: " \
                + "\n压力值: " + str(self.pressure) \
-               + "\n钱包余额: " + str(self.wallet)
+               + "\n钱包余额: " + str(self.wallet) \
+               + "\n各科成绩：" \
+               + "\n语文: " + str(self.chinese) \
+               + "\n数学: " + str(self.math) \
+               + "\n英语: " + str(self.english) \
+               +" \n政治: " + str(self.political) \
+               +" \n历史: " + str(self.history) \
+               +" \n地理: " + str(self.geography)\
+               +" \n物理: " + str(self.physics) \
+               +" \n化学: " + str(self.chemistry) \
+               + "\n生物: " + str(self.biology)

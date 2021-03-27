@@ -44,7 +44,9 @@ def main():
     ge=game()
     ge.initialize_player("Leon","male","normal")
     print(ge.player.get_character_status())
-    ge.oneDayPass()
+
+    for i in range(0,50):
+        ge.player.update_mark(3,1,"art")
     print(ge.player.get_character_status())
 
 

@@ -14,13 +14,20 @@ class mainPlayer(character):
         self.traits.generate(difficulty)
         self.update_attribute()
         # 成长系数
-        self.intelligence_coefficient = 0.05
-        self.luck_coefficient = 0.10
-        self.strength_coefficient = 0.05
-        self.dexterity_coefficient = 0.05
-        self.constitution_coefficient = 0.05
-        self.charm_coefficient = 0.05
-        self.willpower_coefficient = 0.10
+        # self.intelligence_coefficient = Decimal(0.05)
+        # self.luck_coefficient = Decimal(0.10)
+        # self.strength_coefficient = Decimal(0.05)
+        # self.dexterity_coefficient = Decimal(0.05)
+        # self.constitution_coefficient = Decimal(0.05)
+        # self.charm_coefficient = Decimal(0.05)
+        # self.willpower_coefficient = Decimal(0.10)
+        self.intelligence_coefficient = (0.05)
+        self.luck_coefficient = (0.10)
+        self.strength_coefficient = (0.05)
+        self.dexterity_coefficient = (0.05)
+        self.constitution_coefficient = (0.05)
+        self.charm_coefficient = (0.05)
+        self.willpower_coefficient = (0.10)
 
     def update_mark(self, num_subject, change_rate, sub_type):
         subjects_art = ['chinese', 'math', 'english', 'political', 'history', 'geography']
@@ -33,13 +40,20 @@ class mainPlayer(character):
                 temp = subjects_art[random.randint(0, 5)]
                 if temp not in result_subject:
                     result_subject.append(temp)
+                    count+=1
         else:
             count = 0
             while count < num_subject:
                 temp = subjects_science[random.randint(0, 5)]
                 if temp not in result_subject:
                     result_subject.append(temp)
+                    count+=1
 
+        # for subject in result_subject:
+        #     getcontext().prec = 6
+        #     change = change_rate + Decimal(change_rate/2)*self.intelligence *self.intelligence_coefficient + Decimal(change_rate/4)*self.luck * self.luck_coefficient + Decimal(change_rate/4)*self.willpower * self.willpower_coefficient
+        #     exec("self." + subject + "+=" + change)
         for subject in result_subject:
-            change = change_rate + Decimal(change_rate/2)*self.intelligence *self.intelligence_coefficient + Decimal(change_rate/4)*self.luck * self.luck_coefficient + Decimal(change_rate/4)*self.willpower * self.willpower_coefficient
-            exec("self." + subject + "+=" + change)
+            getcontext().prec = 6
+            change = change_rate + float(change_rate/2)*self.intelligence *self.intelligence_coefficient + float(change_rate/4)*self.luck * self.luck_coefficient + float(change_rate/4)*self.willpower * self.willpower_coefficient
+            exec ("self." + subject + "+=" + str(change))
