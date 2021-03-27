@@ -53,7 +53,7 @@ class character(object):
 
     def get_character_status(self):
         return "姓名: " + self.name  \
-               + "\n人物属性: " \
+               + "\n\n人物属性: " \
                + "\n运气: " + str(self.luck) \
                + "\n魅力: " + str(self.charm) \
                + "\n力量: " + str(self.strength) \
@@ -61,16 +61,19 @@ class character(object):
                + "\n意志力: " + str(self.willpower) \
                + "\n体质: " + str(self.constitution) \
                + "\n智力: " + str(self.intelligence) \
-               + "\n人物状态: " \
+               + "\n\n人物状态: " \
                + "\n压力值: " + str(self.pressure) \
                + "\n钱包余额: " + str(self.wallet) \
-               + "\n各科成绩：" \
-               + "\n语文: " + str(self.chinese) \
-               + "\n数学: " + str(self.math) \
-               + "\n英语: " + str(self.english) \
-               +" \n政治: " + str(self.political) \
-               +" \n历史: " + str(self.history) \
-               +" \n地理: " + str(self.geography)\
-               +" \n物理: " + str(self.physics) \
-               +" \n化学: " + str(self.chemistry) \
-               + "\n生物: " + str(self.biology)
+               + "\n\n各科成绩：" \
+               + "\n语文: %.2f" % round(self.chinese, 2)\
+               + "\n数学: %.2f" % round(self.math, 2) \
+               + "\n英语: %.2f" % round(self.english, 2) \
+               +" \n政治: %.2f" % round(self.political, 2) \
+               +" \n历史: %.2f" % round(self.history, 2) \
+               +" \n地理: %.2f" % round(self.geography, 2)\
+               +" \n物理: %.2f" % round(self.physics, 2)\
+               +" \n化学: %.2f" % round(self.chemistry, 2) \
+               + "\n生物: %.2f" % round(self.biology, 2)\
+               + "\n文综: %.2f" % round(self.geography + self.political + self.history, 2) \
+               + "\n理综: %.2f" % round(self.physics + self.chemistry + self.biology, 2)
+

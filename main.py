@@ -45,7 +45,7 @@ def main():
     ge.initialize_player("Leon","male","normal")
     print(ge.player.get_character_status())
 
-    for i in range(0,50):
+    for i in range(0,30):
         ge.player.update_mark(3,1,"art")
     print(ge.player.get_character_status())
 
