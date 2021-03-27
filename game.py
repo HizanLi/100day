@@ -1,5 +1,5 @@
 from src.Character.player.mainPlayer import mainPlayer
-from src.Event.Events import events
+from src.Event.mainEvent import events
 import datetime
 
 class game(object):
