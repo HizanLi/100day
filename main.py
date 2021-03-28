@@ -1,4 +1,5 @@
 from src.Character.player.mainPlayer import mainPlayer
+from src.Event.normal.study import study
 from src.Event.mainEvent import mainPlayer
 import datetime
 import copy
@@ -12,8 +13,8 @@ class game(object):
         self.event_log = []  # 事件记录
         self.date = datetime.datetime(2015, 8, 31)  # 游戏开始日期 （开学第一天）
 
-    def initialize_player(self, name, gender, difficulty):
-        self.player = mainPlayer(name, gender, difficulty)
+    def initialize_player(self, name, gender, difficulty,sub_type):
+        self.player = mainPlayer(name, gender, difficulty,sub_type)
 
     def oneDayPass(self):
         copy_date = copy.copy(self.date)
@@ -44,11 +45,16 @@ class game(object):
 
 def main():
     ge = game()
-    ge.initialize_player("Leon", "male", "normal")
+    ge.initialize_player("Leon", "male", "normal",'art')
     print(ge.player.get_character_status())
 
-    for i in range(0, 30):
-        ge.player.update_mark(3, 1, "science")
+    # for i in range(0, 30):
+    #     ge.player.update_mark(3, 1, "science")
+    # print(ge.player.get_character_status())
+
+    event_test = study()
+
+    event_test.study(ge.player)
     print(ge.player.get_character_status())
 
 
