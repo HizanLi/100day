@@ -15,7 +15,7 @@ import random
 # 第二层按钮
 # 学习 +成绩 +压力
 # Study 1-1 做习题
-# Study 1-2 看讲解
+# Study 1-2 看网课
 # Study 1-3 请家教
 # Study 1-4 补习班
 
