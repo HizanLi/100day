@@ -44,17 +44,14 @@ class character(object):
         self.biology = biology #生物
 
     def update_attribute(self):
-        print("is called")
+        print("update_attribute is called")
         self.trait_log = []
 
-        for change in self.traits.attributes_positive_result:
+        for change in self.traits.generate(self.difficulty):
             self.trait_log.append(change)
             change = change.split(',')
             exec("self." + change[1] + "=" + "self." + change[1] + change[2])
-        for change in self.traits.attributes_negative_result:
-            self.trait_log.append(change)
-            change = change.split(',')
-            exec("self." + change[1] + "=" + "self." + change[1] + change[2])
+
 
     def get_character_status(self):
         return "姓名: " + self.name  \

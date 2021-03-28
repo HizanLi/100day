@@ -78,43 +78,28 @@ class game(object):
 
 
 def main():
-    # for i in range(0, 30):
-    #     ge.player.update_mark(3, 1, "science")
-    # print(ge.player.get_character_status())
-
-    # event_test = study()
-    # event_test.study(ge.player)
-    # print(ge.player.get_character_status())
-
-    # app = QApplication(sys.argv)
-    # mainWindow = QMainWindow()
-    # ui = mainWindoe.Ui_MainWindow()
-    # ui.setupUi(mainWindow)
-    # mainWindow.show()
-    # #get info from mainWindow
-    # name = ui.name.text()
-    # gender = ui.gender.currentText()
-    # if ui.subject_type.currentText() == "文综":
-    #     subject_type = "art"
-    # else:
-    #     subject_type = "science"
-    # #start initialize game
-    # ge = game()
-    # ge.initialize_player(name,gender,"normal",subject_type)
-    # ge.player.print_log()
-    # show_attributes(ui,ge)
-    #
-    # ui.refresh.clicked.connect(partial(re_generate, ui, ge))
-    #
-    # sys.exit(app.exec_())
-    print("here")
+    app = QApplication(sys.argv)
+    mainWindow = QMainWindow()
+    ui = mainWindoe.Ui_MainWindow()
+    ui.setupUi(mainWindow)
+    mainWindow.show()
+    #get info from mainWindow
+    name = ui.name.text()
+    gender = ui.gender.currentText()
+    if ui.subject_type.currentText() == "文综":
+        subject_type = "art"
+    else:
+        subject_type = "science"
+    #start initialize game
     ge = game()
-    ge.initialize_player("leo","male","normal","science")
+    ge.initialize_player(name,gender,"normal",subject_type)
     ge.player.print_log()
-    del ge
-    ab = game()
-    ab.initialize_player("leon","male","normal","science")
-    ab.player.print_log()
+    show_attributes(ui,ge)
+
+    ui.refresh.clicked.connect(partial(re_generate, ui, ge))
+
+    sys.exit(app.exec_())
+
 
 
 def re_generate(ui,ge):
@@ -124,9 +109,8 @@ def re_generate(ui,ge):
         subject_type = "art"
     else:
         subject_type = "science"
-    new_ge = game()
-    new_ge.initialize_player(name, gender, "normal", subject_type)
-    new_ge.player.print_log()
+    ge.initialize_player(name, gender, "normal", subject_type)
+    ge.player.print_log()
     show_attributes(ui,ge)
 
 def show_attributes(ui,ge):

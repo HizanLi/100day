@@ -39,17 +39,11 @@ class mainTraits(object):  # 人物特性
     attributes_negative_possibility = [0.1, 0.10, 0.16, 0.16, 0.16, 0.16, 0.16]
     attribute_negative_possibility=[0.8,0.15,0.05]
 
-    positive_result = []
-    negative_result = []
 
-    attributes_positive_result = []
-    attributes_negative_result = []
 
     def generate(self,difficulty):
-        self.generate_positive(difficulty)
-        self.generate_negative(difficulty)
-
-    def generate_positive(self,difficulty):
+        print("generate is called")
+        #generate positive
         count = 0
         if difficulty == 'hard':
             time = 2
@@ -57,18 +51,19 @@ class mainTraits(object):  # 人物特性
             time = 4
         else:
             time = 3
-
+        print("generate_positive is called, and count is " + str(time))
+        positive_result = []
+        attributes_result=[]
         while count < time:
             temp = numpy.random.choice(self.attributes_positive, p=self.attributes_positive_possibility)
-            if temp not in self.positive_result:
-                self.positive_result.append(temp)
+            if temp not in positive_result:
+                positive_result.append(temp)
                 count += 1
 
-        for attribute in self.positive_result:
+        for attribute in positive_result:
             temp = numpy.random.choice(eval("self."+attribute+"_positive"),p=self.attribute_positive_possibility)
-            self.attributes_positive_result.append(temp)
-
-    def generate_negative(self,difficulty):
+            attributes_result.append(temp)
+        #generate negative
         count = 0
         if difficulty == 'hard':
             time = 2
@@ -76,13 +71,16 @@ class mainTraits(object):  # 人物特性
             time = 0
         else:
             time = 1
-
+        print("generate_negative is called, and count is " + str(time))
+        negative_result = []
         while count < time:
             temp = numpy.random.choice(self.attributes_negative, p=self.attributes_negative_possibility)
-            if temp not in self.positive_result and temp not in self.negative_result:
-                self.negative_result.append(temp)
+            if temp not in positive_result and temp not in negative_result:
+                negative_result.append(temp)
                 count += 1
 
-        for attribute in self.negative_result:
+        for attribute in negative_result:
             temp = numpy.random.choice(eval("self."+attribute+"_negative"),p=self.attribute_negative_possibility)
-            self.attributes_negative_result.append(temp)
+            attributes_result.append(temp)
+
+        return attributes_result

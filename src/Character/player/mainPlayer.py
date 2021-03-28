@@ -5,6 +5,7 @@ import numpy
 
 
 class mainPlayer(character):
+
     def __init__(self, name, gender, difficulty,sub_type):
         super().__init__(name, gender, difficulty,sub_type)
         self.initialize_character_type("main")
