@@ -36,6 +36,9 @@ class game(object):
     def final_test(self):
         final_test = datetime.datetime(2016, 6, 7)
 
+    def event_interpreter(self,):
+        pass
+
     # initialize_
 
 

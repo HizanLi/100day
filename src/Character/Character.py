@@ -3,10 +3,11 @@ from src.Character.trait.mainTraits import mainTraits
 
 class character(object):
 
-    def __init__(self, name, gender,difficulty):
+    def __init__(self, name, gender,difficulty,sub_type):
         self.name = name
         self.gender=gender
         self.difficulty=difficulty
+        self.sub_type = sub_type
 
         self.event_log = []
         self.trait_log = []

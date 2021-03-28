@@ -5,7 +5,7 @@ from src.Event.mainEvent import mainEvent
 #Limit  限定事件 2
 
 class buyBook(mainEvent):
-    event_type = 2
+    event_type = 1
 
     def get_event_info(self, date, character, info):
         super(buyBook, self).get_event_info(date,character,info)
