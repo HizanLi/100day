@@ -29,7 +29,7 @@ class mainPlayer(character):
         self.charm_coefficient = 0.05
         self.willpower_coefficient = 0.10
 
-    def update_mark(self, num_subject, change_rate, sub_type):
+    def update_mark_random(self, num_subject, change_rate, sub_type):
         subjects_art = ['chinese', 'math', 'english', 'political', 'history', 'geography']
         subjects_science = ['chinese', 'math', 'english', 'physics', 'chemistry', 'biology']
         result_subject = []
@@ -48,12 +48,10 @@ class mainPlayer(character):
                 if temp not in result_subject:
                     result_subject.append(temp)
                     count+=1
-
-        # for subject in result_subject:
-        #     getcontext().prec = 6
-        #     change = change_rate + Decimal(change_rate/2)*self.intelligence *self.intelligence_coefficient + Decimal(change_rate/4)*self.luck * self.luck_coefficient + Decimal(change_rate/4)*self.willpower * self.willpower_coefficient
-        #     exec("self." + subject + "+=" + change)
         for subject in result_subject:
             getcontext().prec = 6
             change = change_rate + float(change_rate/2)*self.intelligence *self.intelligence_coefficient + float(change_rate/4)*self.luck * self.luck_coefficient + float(change_rate/4)*self.willpower * self.willpower_coefficient
             exec ("self." + subject + "+=" + str(change))
+
+    def update_mark_select(self, num_subject, change_rate):
+        pass
