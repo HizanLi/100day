@@ -17,6 +17,8 @@ class character(object):
         print(self.trait_log)
 
     def initialize_character_type(self,type):
+        #npc
+        #player
         self.character_type=type
 
     def initialize_attribute(self,luck,strength,intelligence,dexterity,constitution,charm,willpower):
@@ -43,14 +45,18 @@ class character(object):
         self.chemistry = chemistry #化学
         self.biology = biology #生物
 
-    def update_attribute(self):
+    def update_attribute(self,character_type,trait_type):
         self.trait_log = []
-
-        for change in self.traits.generate(self.difficulty):
-            self.trait_log.append(change)
-            change = change.split(',')
-            exec("self." + change[1] + "=" + "self." + change[1] + change[2])
-
+        if character_type == 'player':
+            for change in self.traits.generate(self.difficulty):
+                self.trait_log.append(change)
+                change = change.split(',')
+                exec("self." + change[1] + "=" + "self." + change[1] + change[2])
+        else:
+            for change in self.traits.generate_npc(trait_type):
+                self.trait_log.append(change)
+                change = change.split(',')
+                exec("self." + change[1] + "=" + "self." + change[1] + change[2])
 
     def get_character_status(self):
         return "姓名: " + self.name  \

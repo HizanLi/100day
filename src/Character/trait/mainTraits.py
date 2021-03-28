@@ -83,3 +83,9 @@ class mainTraits(object):  # 人物特性
             attributes_result.append(temp)
 
         return attributes_result
+
+    def generate_npc(self,trait_type):
+        if trait_type == "zhuma":
+            return ["聪明绝顶,intelligence,+5","百折不挠,willpower,+5",
+                    "吉人天相,luck,+3","玉树临风,charm,+3",
+                    "缚鸡之力,strength,-2","身如薄柳,constitution,-1"]

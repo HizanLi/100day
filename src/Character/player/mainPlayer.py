@@ -8,12 +8,11 @@ class mainPlayer(character):
 
     def __init__(self, name, gender, difficulty,sub_type):
         super().__init__(name, gender, difficulty,sub_type)
-        self.initialize_character_type("main")
+        self.initialize_character_type("player")
         self.initialize_mark(101, 109, 104, 66, 66, 66, 66, 66, 66)
         self.initialize_status(1000, 0)
         self.initialize_attribute(10, 10, 10, 10, 10, 10, 10)
-        self.traits.generate(difficulty)
-        self.update_attribute()
+        self.update_attribute("player","")
         # 成长系数
         # self.intelligence_coefficient = Decimal(0.05)
         # self.luck_coefficient = Decimal(0.10)

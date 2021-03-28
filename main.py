@@ -1,3 +1,4 @@
+from src.Character.npc.mainNpc import mainNpc
 from src.Character.player.mainPlayer import mainPlayer
 from src.Event.normal.study import study
 from src.Event.mainEvent import mainPlayer
@@ -67,6 +68,9 @@ class game(object):
         eighth_test = datetime.datetime(2016, 4, 29)
         ninth_test = datetime.datetime(2016, 5, 31)
 
+    def initilize_npc(self):
+        self.zhuma = mainNpc("青梅竹马", "gender", "normal", "art", "zhuma") # 你的青梅竹马
+
     def final_test(self):
         final_test = datetime.datetime(2016, 6, 7)
 
@@ -98,7 +102,6 @@ def main():
     ui.refresh.clicked.connect(partial(re_generate, ui, ge))
 
     sys.exit(app.exec_())
-
 
 
 def re_generate(ui,ge):
