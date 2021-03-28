@@ -42,7 +42,6 @@ class mainTraits(object):  # 人物特性
 
 
     def generate(self,difficulty):
-        print("generate is called")
         #generate positive
         count = 0
         if difficulty == 'hard':
@@ -51,7 +50,7 @@ class mainTraits(object):  # 人物特性
             time = 4
         else:
             time = 3
-        print("generate_positive is called, and count is " + str(time))
+        # print("generate_positive is called, and count is " + str(time))
         positive_result = []
         attributes_result=[]
         while count < time:
@@ -71,7 +70,7 @@ class mainTraits(object):  # 人物特性
             time = 0
         else:
             time = 1
-        print("generate_negative is called, and count is " + str(time))
+        # print("generate_negative is called, and count is " + str(time))
         negative_result = []
         while count < time:
             temp = numpy.random.choice(self.attributes_negative, p=self.attributes_negative_possibility)

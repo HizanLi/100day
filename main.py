@@ -93,9 +93,8 @@ def main():
     #start initialize game
     ge = game()
     ge.initialize_player(name,gender,"normal",subject_type)
-    ge.player.print_log()
     show_attributes(ui,ge)
-
+    print(ge.player.get_character_status())
     ui.refresh.clicked.connect(partial(re_generate, ui, ge))
 
     sys.exit(app.exec_())
@@ -110,7 +109,8 @@ def re_generate(ui,ge):
     else:
         subject_type = "science"
     ge.initialize_player(name, gender, "normal", subject_type)
-    ge.player.print_log()
+    print(ge.player.get_character_status())
+
     show_attributes(ui,ge)
 
 def show_attributes(ui,ge):

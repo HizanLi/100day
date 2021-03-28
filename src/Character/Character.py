@@ -44,7 +44,6 @@ class character(object):
         self.biology = biology #生物
 
     def update_attribute(self):
-        print("update_attribute is called")
         self.trait_log = []
 
         for change in self.traits.generate(self.difficulty):
