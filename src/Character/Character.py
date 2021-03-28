@@ -10,10 +10,11 @@ class character(object):
         self.sub_type = sub_type
 
         self.event_log = []
-        self.trait_log = []
 
         self.traits = mainTraits()
 
+    def print_log(self):
+        print(self.trait_log)
 
     def initialize_character_type(self,type):
         self.character_type=type
@@ -43,6 +44,9 @@ class character(object):
         self.biology = biology #生物
 
     def update_attribute(self):
+        print("is called")
+        self.trait_log = []
+
         for change in self.traits.attributes_positive_result:
             self.trait_log.append(change)
             change = change.split(',')

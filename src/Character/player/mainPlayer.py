@@ -26,8 +26,8 @@ class mainPlayer(character):
         self.strength_coefficient = (0.05)
         self.dexterity_coefficient = (0.05)
         self.constitution_coefficient = (0.05)
-        self.charm_coefficient = (0.05)
-        self.willpower_coefficient = (0.10)
+        self.charm_coefficient = 0.05
+        self.willpower_coefficient = 0.10
 
     def update_mark(self, num_subject, change_rate, sub_type):
         subjects_art = ['chinese', 'math', 'english', 'political', 'history', 'geography']

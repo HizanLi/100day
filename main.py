@@ -86,27 +86,48 @@ def main():
     # event_test.study(ge.player)
     # print(ge.player.get_character_status())
 
-    app = QApplication(sys.argv)
-    mainWindow = QMainWindow()
-    ui = mainWindoe.Ui_MainWindow()
-    ui.setupUi(mainWindow)
-    mainWindow.show()
-    #get info
+    # app = QApplication(sys.argv)
+    # mainWindow = QMainWindow()
+    # ui = mainWindoe.Ui_MainWindow()
+    # ui.setupUi(mainWindow)
+    # mainWindow.show()
+    # #get info from mainWindow
+    # name = ui.name.text()
+    # gender = ui.gender.currentText()
+    # if ui.subject_type.currentText() == "文综":
+    #     subject_type = "art"
+    # else:
+    #     subject_type = "science"
+    # #start initialize game
+    # ge = game()
+    # ge.initialize_player(name,gender,"normal",subject_type)
+    # ge.player.print_log()
+    # show_attributes(ui,ge)
+    #
+    # ui.refresh.clicked.connect(partial(re_generate, ui, ge))
+    #
+    # sys.exit(app.exec_())
+    print("here")
+    ge = game()
+    ge.initialize_player("leo","male","normal","science")
+    ge.player.print_log()
+    del ge
+    ab = game()
+    ab.initialize_player("leon","male","normal","science")
+    ab.player.print_log()
+
+
+def re_generate(ui,ge):
     name = ui.name.text()
     gender = ui.gender.currentText()
     if ui.subject_type.currentText() == "文综":
         subject_type = "art"
     else:
         subject_type = "science"
-    #start initialize game
-    ge = game()
-    ge.initialize_player(name,gender,"normal",subject_type)
-    print(ge.player.get_character_status())
+    new_ge = game()
+    new_ge.initialize_player(name, gender, "normal", subject_type)
+    new_ge.player.print_log()
     show_attributes(ui,ge)
-
-    ui.refresh.clicked.connect(partial(show_attributes, ui, ge))
-    sys.exit(app.exec_())
-
 
 def show_attributes(ui,ge):
     ui.luck.setText(str(ge.player.luck))
