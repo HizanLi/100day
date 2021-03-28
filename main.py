@@ -4,7 +4,10 @@ from src.Event.mainEvent import mainPlayer
 import datetime
 import copy
 import random
-
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
+from functools import partial
+from ui import mainWindoe
 
 # 第一层按钮
 # Study 1 学习
@@ -75,19 +78,46 @@ class game(object):
 
 
 def main():
-    ge = game()
-    ge.initialize_player("Leon", "male", "normal", 'art')
-    print(ge.player.get_character_status())
-
     # for i in range(0, 30):
     #     ge.player.update_mark(3, 1, "science")
     # print(ge.player.get_character_status())
 
-    event_test = study()
+    # event_test = study()
+    # event_test.study(ge.player)
+    # print(ge.player.get_character_status())
 
-    event_test.study(ge.player)
+    app = QApplication(sys.argv)
+    mainWindow = QMainWindow()
+    ui = mainWindoe.Ui_MainWindow()
+    ui.setupUi(mainWindow)
+    mainWindow.show()
+    #get info
+    name = ui.name.text()
+    gender = ui.gender.currentText()
+    if ui.subject_type.currentText() == "文综":
+        subject_type = "art"
+    else:
+        subject_type = "science"
+    #start initialize game
+    ge = game()
+    ge.initialize_player(name,gender,"normal",subject_type)
     print(ge.player.get_character_status())
+    show_attributes(ui,ge)
+
+    ui.refresh.clicked.connect(partial(show_attributes, ui, ge))
+    sys.exit(app.exec_())
+
+
+def show_attributes(ui,ge):
+    ui.luck.setText(str(ge.player.luck))
+    ui.Charm.setText(str(ge.player.charm))
+    ui.dexterity.setText(str(ge.player.dexterity))
+    ui.constitution.setText(str(ge.player.constitution))
+    ui.intelligence.setText(str(ge.player.intelligence))
+    ui.strength.setText(str(ge.player.strength))
 
 
 if __name__ == '__main__':
     main()
+
+
