@@ -7,8 +7,22 @@ from src.Event.eventExpections.exceptions import *
 
 #study for lowest grade subject
 class tutor(study):
-    def study_select(self, mainPlayer, num_subject, change_rate):
+    def study_select(self, mainPlayer):
         if mainPlayer.wallet < 200:
             raise notEnoughMoney
         mainPlayer.wallet -= 200
-        super(tutor, self).study_select(mainPlayer,1,5)
+        result = mainPlayer.update_mark_select(1,5)
+        result = self.trans_sub(result)
+        info = "你今天做了找了私教给你补了一整天的课，你感觉你对"
+        count = 0
+        for sub in result:
+
+            info += sub
+            if count == len(result)-2:
+                info += "，和"
+            elif count != len(result)-1:
+                info += "，"
+
+            count+=1
+        info += '的理解中幅度提升了。'
+        return info

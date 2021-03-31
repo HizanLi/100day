@@ -8,6 +8,10 @@ import random
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from functools import partial
+
+from src.Event.normal import *
+from src.Event.normal.study_find_tutor import tutor
+from src.Event.normal.study_with_her import study_with_her
 from ui import mainWindoe
 
 # 第一层按钮
@@ -16,7 +20,9 @@ from ui import mainWindoe
 # relax 3 休息
 # invite 4 邀约
 
-# 第二层按钮
+1  # 第二层按钮
+
+
 # 学习 +成绩 +压力
 # Study 1-1 做习题
 # Study 1-2 看网课
@@ -58,23 +64,24 @@ class game(object):
             self.player.wallet += self.monthly_money
 
     def monthly_test(self):
-        first_test = datetime.datetime(2015, 9, 30)
+        first_test = datetime.datetime(2015, 9, 30)  # 解锁家教
         second_test = datetime.datetime(2015, 10, 30)
         third_test = datetime.datetime(2015, 11, 30)
         fourth_test = datetime.datetime(2015, 12, 31)
-        fifth_test = datetime.datetime(2016, 1, 29)
+        fifth_test = datetime.datetime(2016, 1, 29)  # 解锁补习班
         sixth_test = datetime.datetime(2016, 2, 26)
         seventh_test = datetime.datetime(2016, 3, 31)
         eighth_test = datetime.datetime(2016, 4, 29)
         ninth_test = datetime.datetime(2016, 5, 31)
 
     def initilize_npc(self):
-        self.zhuma = mainNpc("青梅竹马", "gender", "normal", "art", "zhuma") # 你的青梅竹马
+        self.zhuma = mainNpc("青梅竹马", "gender", "normal", "art", "zhuma")  # 你的青梅竹马
 
     def final_test(self):
         final_test = datetime.datetime(2016, 6, 7)
 
     def event_interpreter(self):
+        # date.strftime("%B") + " " + date.strftime("%d") + ", " + date.strftime("%Y") + ' ' + date.strftime("%A")
         pass
 
     def start(self):
@@ -82,29 +89,34 @@ class game(object):
 
 
 def main():
-    app = QApplication(sys.argv)
-    mainWindow = QMainWindow()
-    ui = mainWindoe.Ui_MainWindow()
-    ui.setupUi(mainWindow)
-    mainWindow.show()
-    #get info from mainWindow
-    name = ui.name.text()
-    gender = ui.gender.currentText()
-    if ui.subject_type.currentText() == "文综":
-        subject_type = "art"
-    else:
-        subject_type = "science"
-    #start initialize game
+    # app = QApplication(sys.argv)
+    # mainWindow = QMainWindow()
+    # ui = mainWindoe.Ui_MainWindow()
+    # ui.setupUi(mainWindow)
+    # mainWindow.show()
+    # #get info from mainWindow
+    # name = ui.name.text()
+    # gender = ui.gender.currentText()
+    # if ui.subject_type.currentText() == "文综":
+    #     subject_type = "art"
+    # else:
+    #     subject_type = "science"
+    # #start initialize game
+    # ge = game()
+    # ge.initialize_player(name,gender,"normal",subject_type)
+    # show_attributes(ui,ge)
+    # print(ge.player.get_character_status())
+    # ui.refresh.clicked.connect(partial(re_generate, ui, ge))
+    #
+    # sys.exit(app.exec_())
+
     ge = game()
-    ge.initialize_player(name,gender,"normal",subject_type)
-    show_attributes(ui,ge)
+    ge.initialize_player("leo", "male", "normal", "art")
+    even = tutor()
+    print(even.study_select(ge.player))
     print(ge.player.get_character_status())
-    ui.refresh.clicked.connect(partial(re_generate, ui, ge))
 
-    sys.exit(app.exec_())
-
-
-def re_generate(ui,ge):
+def re_generate(ui, ge):
     name = ui.name.text()
     gender = ui.gender.currentText()
     if ui.subject_type.currentText() == "文综":
@@ -114,9 +126,10 @@ def re_generate(ui,ge):
     ge.initialize_player(name, gender, "normal", subject_type)
     print(ge.player.get_character_status())
 
-    show_attributes(ui,ge)
+    show_attributes(ui, ge)
 
-def show_attributes(ui,ge):
+
+def show_attributes(ui, ge):
     ui.luck.setText(str(ge.player.luck))
     ui.Charm.setText(str(ge.player.charm))
     ui.dexterity.setText(str(ge.player.dexterity))
@@ -127,5 +140,3 @@ def show_attributes(ui,ge):
 
 if __name__ == '__main__':
     main()
-
-
