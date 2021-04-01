@@ -1,6 +1,6 @@
 from src.Character.npc.mainNpc import mainNpc
 from src.Character.player.mainPlayer import mainPlayer
-from src.Event.normal.study import study
+from src.Event.normal.study import *
 from src.Event.mainEvent import mainPlayer
 import datetime
 import copy
@@ -10,36 +10,10 @@ from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from functools import partial
 
 from src.Event.normal import *
-from src.Event.normal.study_find_tutor import tutor
-from src.Event.normal.study_with_her import study_with_her
 from ui import mainWindoe
 
-# 第一层按钮
-# Study 1 学习
-# Excerise 2 锻炼
-# relax 3 休息
 # invite 4 邀约
 
-1  # 第二层按钮
-
-
-# 学习 +成绩 +压力
-# Study 1-1 做习题
-# Study 1-2 看网课
-# Study 1-3 请家教
-# Study 1-4 补习班
-
-# 锻炼 -压力 -体力 -金钱？ +体制/敏捷/力量
-# Excerise 2 举铁
-# Excerise 2 长跑
-# Excerise 2 铁人三项
-# Excerise 2 专业训练
-
-# 休息 -压力 -金钱 +体力
-# relax 3 玩手机
-# relax 3 去网吧
-# relax 3 逛超市
-# relax 3 玩电脑
 
 # 邀约 +好感 -金钱
 # invite 4 图书馆
@@ -112,9 +86,10 @@ def main():
 
     ge = game()
     ge.initialize_player("leo", "male", "normal", "art")
-    even = tutor()
-    print(even.study_select(ge.player))
+    even = extraClass()
+    print(even.extraClass(ge.player))
     print(ge.player.get_character_status())
+
 
 def re_generate(ui, ge):
     name = ui.name.text()
