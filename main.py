@@ -18,6 +18,7 @@ class game(object):
         self.monthly_money = 1000  # 每月零花钱
         self.event_log = []  # 事件记录
         self.date = datetime.datetime(2015, 8, 31)  # 游戏开始日期 （开学第一天）
+        self.initilize_npc()
 
     def initialize_player(self, name, gender, difficulty, sub_type):
         self.player = mainPlayer(name, gender, difficulty, sub_type)
@@ -41,7 +42,7 @@ class game(object):
         ninth_test = datetime.datetime(2016, 5, 31)
 
     def initilize_npc(self):
-        self.zhuma = mainNpc("青梅竹马", "gender", "normal", "art", "zhuma")  # 你的青梅竹马
+        self.zhuma = zhuma("青梅竹马", "gender", "normal", "art")  # 你的青梅竹马
 
     def final_test(self):
         final_test = datetime.datetime(2016, 6, 7)
@@ -55,32 +56,26 @@ class game(object):
 
 
 def main():
-    # app = QApplication(sys.argv)
-    # mainWindow = QMainWindow()
-    # ui = mainWindoe.Ui_MainWindow()
-    # ui.setupUi(mainWindow)
-    # mainWindow.show()
-    # #get info from mainWindow
-    # name = ui.name.text()
-    # gender = ui.gender.currentText()
-    # if ui.subject_type.currentText() == "文综":
-    #     subject_type = "art"
-    # else:
-    #     subject_type = "science"
-    # #start initialize game
-    # ge = game()
-    # ge.initialize_player(name,gender,"normal",subject_type)
-    # show_attributes(ui,ge)
-    # print(ge.player.get_character_status())
-    # ui.refresh.clicked.connect(partial(re_generate, ui, ge))
-    #
-    # sys.exit(app.exec_())
-
+    app = QApplication(sys.argv)
+    mainWindow = QMainWindow()
+    ui = mainWindoe.Ui_MainWindow()
+    ui.setupUi(mainWindow)
+    mainWindow.show()
+    #get info from mainWindow
+    name = ui.name.text()
+    gender = ui.gender.currentText()
+    if ui.subject_type.currentText() == "文综":
+        subject_type = "art"
+    else:
+        subject_type = "science"
+    #start initialize game
     ge = game()
-    ge.initialize_player("leo", "male", "normal", "art")
-    even = extraClass()
-    print(even.extraClass(ge.player))
+    ge.initialize_player(name,gender,"normal",subject_type)
+    show_attributes(ui,ge)
     print(ge.player.get_character_status())
+    ui.refresh.clicked.connect(partial(re_generate, ui, ge))
+
+    sys.exit(app.exec_())
 
 
 def re_generate(ui, ge):
