@@ -1,4 +1,4 @@
-from src.Character.npc.mainNpc import mainNpc
+from src.Character.npc.zhuma import zhuma
 from src.Character.player.mainPlayer import mainPlayer
 from src.Event.normal.study import *
 from src.Event.mainEvent import mainPlayer
@@ -12,14 +12,6 @@ from functools import partial
 from src.Event.normal import *
 from ui import mainWindoe
 
-# invite 4 邀约
-
-
-# 邀约 +好感 -金钱
-# invite 4 图书馆
-# invite 4 大商场
-# invite 4 电影院
-# invite 4 游乐园
 
 class game(object):
     def __init__(self):

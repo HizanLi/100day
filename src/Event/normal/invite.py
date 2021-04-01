@@ -6,17 +6,37 @@ class invite(mainEvent):
     def __init__(self):
         self.event_type = 0
 
+#解锁条件 - 好感达到 20
+class park(invite): #图书馆
+    def __init__(self):
+        super().__init__()
+
+    def park(self, mainPlayer,zhuma):
+        mainPlayer.pressure -= 2
+        info = "你和你的青梅竹马今天附近的公园转了一天。"
+
+        return info
+
 #解锁条件 - 好感达到 30
 class library(invite): #图书馆
     def __init__(self):
         super().__init__()
 
-    def library(self, mainPlayer):
-        mainPlayer.pressure -= 2
-        mainPlayer.strength += 0.1
-        mainPlayer.constitution += 0.1
-        mainPlayer.dexterity += 0.1
-        info = "你拿你爸爸的健身卡去健身房锻炼了一整天，你的压力小幅度减少了，力量，体质，和敏捷小幅度提升"
+    def library(self, mainPlayer,zhuma):
+        result = mainPlayer.update_mark_random(4, 1)
+        result = self.trans_sub(result)
+        mainPlayer.pressure -= 5
+        info = "你和你的青梅竹马今天去图书馆看了一天的书。从书中，你学习了"
+        count = 0
+        for sub in result:
+
+            info += sub
+            if count == len(result) - 2:
+                info += "，和"
+            elif count != len(result) - 1:
+                info += "，"
+
+            count += 1
         return info
 
 #解锁条件 - 好感达到 40
@@ -24,7 +44,7 @@ class shopping_center(invite): #大商场
     def __init__(self):
         super().__init__()
 
-    def shopping_center(self, mainPlayer):
+    def shopping_center(self, mainPlayer,zhuma):
         if mainPlayer.wallet < 200:
             raise notEnoughMoney
         mainPlayer.wallet -= 200
@@ -45,10 +65,10 @@ class theater(invite): #电影院
     def __init__(self):
         super().__init__()
 
-    def theater(self, mainPlayer):
-        if mainPlayer.wallet < 500:
+    def theater(self, mainPlayer,zhuma):
+        if mainPlayer.wallet < 100:
             raise notEnoughMoney
-        mainPlayer.wallet -= 500
+        mainPlayer.wallet -= 100
 
         if mainPlayer.pressure >= 10:
             mainPlayer.pressure -= 10
@@ -67,14 +87,14 @@ class amusement_park(invite): #游乐园
     def __init__(self):
         super().__init__()
 
-    def amusement_park(self, mainPlayer):
-        if mainPlayer.pressure >= 10:
-            mainPlayer.pressure -= 10
+    def amusement_park(self, mainPlayer,zhuma):
+        if mainPlayer.wallet < 500:
+            raise notEnoughMoney
+        mainPlayer.wallet -= 500
+        if mainPlayer.pressure >= 20:
+            mainPlayer.pressure -= 20
         else:
             mainPlayer.pressure = 0
-        mainPlayer.strength += 0.1
-        mainPlayer.constitution += 0.1
-        mainPlayer.dexterity += 0.1
 
-        info = "你和你的青梅竹马一起锻炼了一整天，你的压力大幅度减少了，力量，体质，和敏捷小幅度提升"
+        info = "你和你的青梅竹马去游旅游玩了一整天，你的压力大幅度减少了"
         return info
