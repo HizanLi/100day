@@ -6,26 +6,32 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>816</width>
-    <height>609</height>
+    <width>1326</width>
+    <height>1080</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QFrame" name="eventFrame">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>291</width>
-      <height>551</height>
+      <width>441</width>
+      <height>1000</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QLabel" name="label_59">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>事件记录</string>
        </property>
@@ -96,6 +102,9 @@
      </item>
      <item>
       <widget class="QLabel" name="event_log10">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="text">
         <string>TextLabel</string>
        </property>
@@ -103,18 +112,24 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="gridLayoutWidget">
+   <widget class="QFrame" name="dateFrame">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>9</y>
-      <width>161</width>
-      <height>81</height>
+      <x>460</x>
+      <y>10</y>
+      <width>200</width>
+      <height>150</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
      <item row="1" column="0">
       <widget class="QLabel" name="label_7">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>2</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>年</string>
        </property>
@@ -122,6 +137,12 @@
      </item>
      <item row="1" column="2">
       <widget class="QLabel" name="label_9">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>日</string>
        </property>
@@ -129,6 +150,12 @@
      </item>
      <item row="1" column="1">
       <widget class="QLabel" name="label_8">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>月</string>
        </property>
@@ -136,22 +163,40 @@
      </item>
      <item row="2" column="1">
       <widget class="QLabel" name="display_month">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
-        <string>0</string>
+        <string>8</string>
        </property>
       </widget>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="display_year">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>2</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
-        <string>0</string>
+        <string>2015</string>
        </property>
       </widget>
      </item>
      <item row="2" column="2">
       <widget class="QLabel" name="display_day">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
-        <string>0</string>
+        <string>31</string>
        </property>
       </widget>
      </item>
@@ -164,13 +209,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_2">
+   <widget class="QFrame" name="player_frame">
     <property name="geometry">
      <rect>
-      <x>680</x>
+      <x>980</x>
       <y>10</y>
-      <width>91</width>
-      <height>551</height>
+      <width>200</width>
+      <height>1000</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -512,13 +557,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_3">
+   <widget class="QFrame" name="storyFrame">
     <property name="geometry">
      <rect>
-      <x>319</x>
-      <y>109</y>
-      <width>341</width>
-      <height>331</height>
+      <x>460</x>
+      <y>170</y>
+      <width>511</width>
+      <height>631</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -594,18 +639,24 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="gridLayoutWidget_2">
+   <widget class="QFrame" name="buttonFrame">
     <property name="geometry">
      <rect>
-      <x>319</x>
-      <y>459</y>
-      <width>341</width>
-      <height>101</height>
+      <x>510</x>
+      <y>810</y>
+      <width>410</width>
+      <height>200</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_3">
      <item row="1" column="1">
       <widget class="QPushButton" name="pushButton_4">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>PushButton</string>
        </property>
@@ -613,6 +664,12 @@
      </item>
      <item row="1" column="0">
       <widget class="QPushButton" name="pushButton_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>PushButton</string>
        </property>
@@ -620,6 +677,12 @@
      </item>
      <item row="0" column="0">
       <widget class="QPushButton" name="pushButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>PushButton</string>
        </property>
@@ -627,6 +690,12 @@
      </item>
      <item row="0" column="1">
       <widget class="QPushButton" name="pushButton_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>PushButton</string>
        </property>
@@ -634,6 +703,12 @@
      </item>
      <item row="2" column="0">
       <widget class="QPushButton" name="pushButton_5">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>PushButton</string>
        </property>
@@ -641,6 +716,12 @@
      </item>
      <item row="2" column="1">
       <widget class="QPushButton" name="pushButton_6">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>PushButton</string>
        </property>
@@ -648,18 +729,24 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QFrame" name="statusFrame">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>770</x>
       <y>10</y>
-      <width>161</width>
-      <height>81</height>
+      <width>200</width>
+      <height>150</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <item row="2" column="0">
       <widget class="QLabel" name="label_4">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>金钱</string>
        </property>
@@ -667,13 +754,25 @@
      </item>
      <item row="1" column="1">
       <widget class="QLabel" name="pressure_level">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>3</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
-        <string>0</string>
+        <string/>
        </property>
       </widget>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>压力值</string>
        </property>
@@ -681,8 +780,14 @@
      </item>
      <item row="2" column="1">
       <widget class="QLabel" name="money">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>3</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
-        <string>0</string>
+        <string>1000</string>
        </property>
       </widget>
      </item>
@@ -701,7 +806,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>816</width>
+     <width>1326</width>
      <height>20</height>
     </rect>
    </property>
