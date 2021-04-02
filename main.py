@@ -9,7 +9,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from functools import partial
 
 from src.Event.normal import *
-from ui import mainWindoe,gameWindow
+from ui import mainWindow,gameWindow
 
 
 class game(object):
@@ -57,22 +57,22 @@ class game(object):
 def main():
     app = QApplication(sys.argv)
     mainWindow = QMainWindow()
-    ui = gameWindow.Ui_MainWindow()
+    ui = mainWindow.Ui_MainWindow()
     ui.setupUi(mainWindow)
     mainWindow.show()
-    # #get info from mainWindow
-    # name = ui.name.text()
-    # gender = ui.gender.currentText()
-    # if ui.subject_type.currentText() == "文综":
-    #     subject_type = "art"
-    # else:
-    #     subject_type = "science"
-    # #start initialize game
-    # ge = game()
-    # ge.initialize_player(name,gender,"normal",subject_type)
-    # show_attributes(ui,ge)
-    # print(ge.player.get_character_status())
-    # ui.refresh.clicked.connect(partial(re_generate, ui, ge))
+    #get info from mainWindow
+    name = ui.name.text()
+    gender = ui.gender.currentText()
+    if ui.subject_type.currentText() == "文综":
+        subject_type = "art"
+    else:
+        subject_type = "science"
+    #start initialize game
+    ge = game()
+    ge.initialize_player(name,gender,"normal",subject_type)
+    show_attributes(ui,ge)
+    print(ge.player.get_character_status())
+    ui.refresh.clicked.connect(partial(re_generate, ui, ge))
 
     sys.exit(app.exec_())
 
