@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1326</width>
-    <height>1080</height>
+    <height>855</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -162,7 +162,7 @@ border-radius: 3;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 12pt &quot;Arial&quot;;
-align:center</string>
+</string>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
@@ -710,7 +710,7 @@ border-radius: 3;</string>
      <x>0</x>
      <y>0</y>
      <width>1326</width>
-     <height>20</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

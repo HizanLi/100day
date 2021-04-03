@@ -7,8 +7,6 @@ import random
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from functools import partial
-
-from src.Event.normal import *
 from ui import mainWindow,gameWindow
 
 
