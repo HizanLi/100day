@@ -23,6 +23,12 @@
       <height>1000</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Arial&quot;;
+border-width: 1;
+border-style: solid;
+border-radius: 3;</string>
+    </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QLabel" name="label_59">
@@ -33,7 +39,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>事件记录</string>
+        <string>事件记录:</string>
        </property>
       </widget>
      </item>
@@ -47,9 +53,15 @@
      <rect>
       <x>460</x>
       <y>10</y>
-      <width>200</width>
+      <width>241</width>
       <height>150</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Arial&quot;;
+border-width: 1;
+border-style: solid;
+border-radius: 3;</string>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
      <item row="1" column="0">
@@ -133,7 +145,7 @@
      <item row="0" column="0" colspan="3">
       <widget class="QLabel" name="label_6">
        <property name="text">
-        <string>日期</string>
+        <string>日期:</string>
        </property>
       </widget>
      </item>
@@ -148,9 +160,19 @@
       <height>1000</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Arial&quot;;
+align:center</string>
+    </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
       <widget class="QLabel" name="label_27">
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Arial&quot;;
+border-width: 1;
+border-style: solid;
+border-radius: 3;</string>
+       </property>
        <property name="text">
         <string>人物状态：</string>
        </property>
@@ -300,6 +322,12 @@
      </item>
      <item>
       <widget class="QLabel" name="label_48">
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Arial&quot;;
+border-width: 1;
+border-style: solid;
+border-radius: 3;</string>
+       </property>
        <property name="text">
         <string>各科成绩：</string>
        </property>
@@ -496,6 +524,12 @@
       <height>631</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Arial&quot;;
+border-width: 1;
+border-style: solid;
+border-radius: 3;</string>
+    </property>
     <layout class="QVBoxLayout" name="verticalLayout_3">
      <item>
       <widget class="QPlainTextEdit" name="storyBox"/>
@@ -595,11 +629,17 @@
    <widget class="QFrame" name="statusFrame">
     <property name="geometry">
      <rect>
-      <x>770</x>
+      <x>729</x>
       <y>10</y>
-      <width>200</width>
+      <width>241</width>
       <height>150</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Arial&quot;;
+border-width: 1;
+border-style: solid;
+border-radius: 3;</string>
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <item row="2" column="0">
@@ -624,7 +664,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string/>
+        <string>0</string>
        </property>
       </widget>
      </item>
@@ -657,7 +697,7 @@
      <item row="0" column="0" colspan="2">
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>人物状态</string>
+        <string>人物状态:</string>
        </property>
       </widget>
      </item>

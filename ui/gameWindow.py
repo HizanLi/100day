@@ -19,6 +19,10 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.eventFrame = QtWidgets.QFrame(self.centralwidget)
         self.eventFrame.setGeometry(QtCore.QRect(10, 10, 441, 1000))
+        self.eventFrame.setStyleSheet("font: 12pt \"Arial\";\n"
+"border-width: 1;\n"
+"border-style: solid;\n"
+"border-radius: 3;")
         self.eventFrame.setObjectName("eventFrame")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.eventFrame)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -34,7 +38,11 @@ class Ui_MainWindow(object):
         self.pastEventLog.setObjectName("pastEventLog")
         self.verticalLayout.addWidget(self.pastEventLog)
         self.dateFrame = QtWidgets.QFrame(self.centralwidget)
-        self.dateFrame.setGeometry(QtCore.QRect(460, 10, 200, 150))
+        self.dateFrame.setGeometry(QtCore.QRect(460, 10, 241, 150))
+        self.dateFrame.setStyleSheet("font: 12pt \"Arial\";\n"
+"border-width: 1;\n"
+"border-style: solid;\n"
+"border-radius: 3;")
         self.dateFrame.setObjectName("dateFrame")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.dateFrame)
         self.gridLayout_2.setObjectName("gridLayout_2")
@@ -91,10 +99,16 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addWidget(self.label_6, 0, 0, 1, 3)
         self.player_frame = QtWidgets.QFrame(self.centralwidget)
         self.player_frame.setGeometry(QtCore.QRect(980, 10, 200, 1000))
+        self.player_frame.setStyleSheet("font: 12pt \"Arial\";\n"
+"align:center")
         self.player_frame.setObjectName("player_frame")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.player_frame)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.label_27 = QtWidgets.QLabel(self.player_frame)
+        self.label_27.setStyleSheet("font: 12pt \"Arial\";\n"
+"border-width: 1;\n"
+"border-style: solid;\n"
+"border-radius: 3;")
         self.label_27.setObjectName("label_27")
         self.verticalLayout_2.addWidget(self.label_27)
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
@@ -163,6 +177,10 @@ class Ui_MainWindow(object):
         spacerItem = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.verticalLayout_2.addItem(spacerItem)
         self.label_48 = QtWidgets.QLabel(self.player_frame)
+        self.label_48.setStyleSheet("font: 12pt \"Arial\";\n"
+"border-width: 1;\n"
+"border-style: solid;\n"
+"border-radius: 3;")
         self.label_48.setObjectName("label_48")
         self.verticalLayout_2.addWidget(self.label_48)
         self.horizontalLayout_17 = QtWidgets.QHBoxLayout()
@@ -257,6 +275,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addLayout(self.horizontalLayout_10)
         self.storyFrame = QtWidgets.QFrame(self.centralwidget)
         self.storyFrame.setGeometry(QtCore.QRect(460, 170, 511, 631))
+        self.storyFrame.setStyleSheet("font: 12pt \"Arial\";\n"
+"border-width: 1;\n"
+"border-style: solid;\n"
+"border-radius: 3;")
         self.storyFrame.setObjectName("storyFrame")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.storyFrame)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
@@ -317,7 +339,11 @@ class Ui_MainWindow(object):
         self.pushButton_6.setObjectName("pushButton_6")
         self.gridLayout_3.addWidget(self.pushButton_6, 2, 1, 1, 1)
         self.statusFrame = QtWidgets.QFrame(self.centralwidget)
-        self.statusFrame.setGeometry(QtCore.QRect(770, 10, 200, 150))
+        self.statusFrame.setGeometry(QtCore.QRect(729, 10, 241, 150))
+        self.statusFrame.setStyleSheet("font: 12pt \"Arial\";\n"
+"border-width: 1;\n"
+"border-style: solid;\n"
+"border-radius: 3;")
         self.statusFrame.setObjectName("statusFrame")
         self.gridLayout = QtWidgets.QGridLayout(self.statusFrame)
         self.gridLayout.setObjectName("gridLayout")
@@ -335,7 +361,6 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pressure_level.sizePolicy().hasHeightForWidth())
         self.pressure_level.setSizePolicy(sizePolicy)
-        self.pressure_level.setText("")
         self.pressure_level.setObjectName("pressure_level")
         self.gridLayout.addWidget(self.pressure_level, 1, 1, 1, 1)
         self.label_2 = QtWidgets.QLabel(self.statusFrame)
@@ -372,14 +397,14 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_59.setText(_translate("MainWindow", "事件记录"))
+        self.label_59.setText(_translate("MainWindow", "事件记录:"))
         self.label_7.setText(_translate("MainWindow", "年"))
         self.label_9.setText(_translate("MainWindow", "日"))
         self.label_8.setText(_translate("MainWindow", "月"))
         self.display_month.setText(_translate("MainWindow", "8"))
         self.display_year.setText(_translate("MainWindow", "2015"))
         self.display_day.setText(_translate("MainWindow", "31"))
-        self.label_6.setText(_translate("MainWindow", "日期"))
+        self.label_6.setText(_translate("MainWindow", "日期:"))
         self.label_27.setText(_translate("MainWindow", "人物状态："))
         self.label_19.setText(_translate("MainWindow", "敏捷"))
         self.dexterity.setText(_translate("MainWindow", "0"))
@@ -423,6 +448,7 @@ class Ui_MainWindow(object):
         self.pushButton_5.setText(_translate("MainWindow", "PushButton"))
         self.pushButton_6.setText(_translate("MainWindow", "PushButton"))
         self.label_4.setText(_translate("MainWindow", "金钱"))
+        self.pressure_level.setText(_translate("MainWindow", "0"))
         self.label_2.setText(_translate("MainWindow", "压力值"))
         self.money.setText(_translate("MainWindow", "1000"))
-        self.label.setText(_translate("MainWindow", "人物状态"))
+        self.label.setText(_translate("MainWindow", "人物状态:"))
