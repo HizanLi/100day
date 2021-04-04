@@ -786,9 +786,9 @@ border-radius: 3;</string>
     <property name="geometry">
      <rect>
       <x>460</x>
-      <y>880</y>
+      <y>870</y>
       <width>511</width>
-      <height>55</height>
+      <height>80</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -824,9 +824,9 @@ border-radius: 3;</string>
     <property name="geometry">
      <rect>
       <x>460</x>
-      <y>950</y>
+      <y>940</y>
       <width>511</width>
-      <height>55</height>
+      <height>80</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_21">
@@ -862,9 +862,9 @@ border-radius: 3;</string>
     <property name="geometry">
      <rect>
       <x>460</x>
-      <y>810</y>
+      <y>800</y>
       <width>511</width>
-      <height>55</height>
+      <height>80</height>
      </rect>
     </property>
     <property name="sizePolicy">
