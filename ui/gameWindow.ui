@@ -174,7 +174,7 @@ border-style: solid;
 border-radius: 3;</string>
        </property>
        <property name="text">
-        <string>人物状态：</string>
+        <string>人物：</string>
        </property>
       </widget>
      </item>
