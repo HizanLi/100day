@@ -166,17 +166,22 @@ border-radius: 3;</string>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <widget class="QLabel" name="label_27">
-       <property name="styleSheet">
-        <string notr="true">font: 12pt &quot;Arial&quot;;
-border-width: 1;
-border-style: solid;
-border-radius: 3;</string>
-       </property>
-       <property name="text">
-        <string>人物：</string>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout_14">
+       <item>
+        <widget class="QLabel" name="label_29">
+         <property name="text">
+          <string>人物：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="playerName">
+         <property name="text">
+          <string>未设定</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -334,60 +339,6 @@ border-radius: 3;</string>
       </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_17">
-       <item>
-        <widget class="QLabel" name="label_46">
-         <property name="text">
-          <string>生物</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="biology">
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_13">
-       <item>
-        <widget class="QLabel" name="label_38">
-         <property name="text">
-          <string>地理</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="geography">
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_11">
-       <item>
-        <widget class="QLabel" name="label_34">
-         <property name="text">
-          <string>政治</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="political">
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
       <layout class="QHBoxLayout" name="horizontalLayout_8">
        <item>
         <widget class="QLabel" name="label_28">
@@ -424,16 +375,34 @@ border-radius: 3;</string>
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_16">
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
        <item>
-        <widget class="QLabel" name="label_44">
+        <widget class="QLabel" name="label_32">
          <property name="text">
-          <string>化学</string>
+          <string>英语</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="chemistry">
+        <widget class="QLabel" name="english">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_11">
+       <item>
+        <widget class="QLabel" name="label_34">
+         <property name="text">
+          <string>政治</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="political">
          <property name="text">
           <string>0</string>
          </property>
@@ -460,6 +429,60 @@ border-radius: 3;</string>
       </layout>
      </item>
      <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_13">
+       <item>
+        <widget class="QLabel" name="label_38">
+         <property name="text">
+          <string>地理</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="geography">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_17">
+       <item>
+        <widget class="QLabel" name="label_46">
+         <property name="text">
+          <string>生物</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="biology">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_16">
+       <item>
+        <widget class="QLabel" name="label_44">
+         <property name="text">
+          <string>化学</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="chemistry">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
       <layout class="QHBoxLayout" name="horizontalLayout_15">
        <item>
         <widget class="QLabel" name="label_42">
@@ -470,42 +493,6 @@ border-radius: 3;</string>
        </item>
        <item>
         <widget class="QLabel" name="physics">
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_14">
-       <item>
-        <widget class="QLabel" name="label_40">
-         <property name="text">
-          <string>地理</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_41">
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_10">
-       <item>
-        <widget class="QLabel" name="label_32">
-         <property name="text">
-          <string>英语</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="english">
          <property name="text">
           <string>0</string>
          </property>
@@ -1106,22 +1093,5 @@ border-radius: 3;</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>start_game</sender>
-   <signal>clicked()</signal>
-   <receiver>create</receiver>
-   <slot>hide()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>623</x>
-     <y>786</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>959</x>
-     <y>216</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

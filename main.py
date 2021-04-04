@@ -74,8 +74,9 @@ def creat_player(ge):
         subject_type = "science"
     # start initialize game
     ge.initialize_player(name, gender, "normal", subject_type)
-    show_attributes(ui, ge)
+    create_attributes(ui, ge)
     ui.refresh.clicked.connect(partial(re_generate, ui, ge))
+    ui.start_game.clicked.connect(partial(start_game,ui,ge))
 
     sys.exit(app.exec_())
 
@@ -88,10 +89,10 @@ def re_generate(ui, ge):
     else:
         subject_type = "science"
     ge.initialize_player(name, gender, "normal", subject_type)
-    show_attributes(ui, ge)
+    create_attributes(ui, ge)
 
 
-def show_attributes(ui, ge):
+def create_attributes(ui, ge):
     ui.luck_create.setText(str(ge.player.luck))
     ui.charm_create.setText(str(ge.player.charm))
     ui.dexterity_create.setText(str(ge.player.dexterity))
@@ -100,6 +101,32 @@ def show_attributes(ui, ge):
     ui.strength_create.setText(str(ge.player.strength))
     ui.willpower_create.setText(str(ge.player.willpower))
 
+def start_game(ui,ge):
+    ui.create.hide()
+    ui.playerName.setText(str(ge.player.name))
+    update_attributes(ui, ge)
+    update_mark(ui, ge)
+
+def update_mark(ui, ge):
+    ui.chinese.setText(str(ge.player.chinese))
+    ui.math.setText(str(ge.player.math))
+    ui.english.setText(str(ge.player.english))
+    ui.political.setText(str(ge.player.political))
+    ui.history.setText(str(ge.player.history))
+    ui.geography.setText(str(ge.player.geography))
+    ui.biology.setText(str(ge.player.biology))
+    ui.chemistry.setText(str(ge.player.chemistry))
+    ui.physics.setText(str(ge.player.physics))
+
+
+def update_attributes(ui, ge):
+    ui.luck.setText(str(ge.player.luck))
+    ui.charm.setText(str(ge.player.charm))
+    ui.dexterity.setText(str(ge.player.dexterity))
+    ui.constitution.setText(str(ge.player.constitution))
+    ui.intelligence.setText(str(ge.player.intelligence))
+    ui.strength.setText(str(ge.player.strength))
+    ui.willpower.setText(str(ge.player.willpower))
 
 if __name__ == '__main__':
     main()
