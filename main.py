@@ -65,17 +65,18 @@ def creat_player(ge):
     ui.setupUi(mainWindow)
     mainWindow.show()
 
-    # # get info from mainWindow
-    # name = ui.name.text()
-    # gender = ui.gender.currentText()
-    # if ui.subject_type.currentText() == "文综":
-    #     subject_type = "art"
-    # else:
-    #     subject_type = "science"
-    # # start initialize game
-    # ge.initialize_player(name, gender, "normal", subject_type)
-    # show_attributes(ui, ge)
-    # ui.refresh.clicked.connect(partial(re_generate, ui, ge))
+    # get info from mainWindow
+    name = ui.name.text()
+    gender = ui.gender.currentText()
+    if ui.subject_type.currentText() == "文综":
+        subject_type = "art"
+    else:
+        subject_type = "science"
+    # start initialize game
+    ge.initialize_player(name, gender, "normal", subject_type)
+    show_attributes(ui, ge)
+    ui.refresh.clicked.connect(partial(re_generate, ui, ge))
+
     sys.exit(app.exec_())
 
 
@@ -87,18 +88,17 @@ def re_generate(ui, ge):
     else:
         subject_type = "science"
     ge.initialize_player(name, gender, "normal", subject_type)
-    print(ge.player.get_character_status())
-
     show_attributes(ui, ge)
 
 
 def show_attributes(ui, ge):
-    ui.luck.setText(str(ge.player.luck))
-    ui.Charm.setText(str(ge.player.charm))
-    ui.dexterity.setText(str(ge.player.dexterity))
-    ui.constitution.setText(str(ge.player.constitution))
-    ui.intelligence.setText(str(ge.player.intelligence))
-    ui.strength.setText(str(ge.player.strength))
+    ui.luck_create.setText(str(ge.player.luck))
+    ui.charm_create.setText(str(ge.player.charm))
+    ui.dexterity_create.setText(str(ge.player.dexterity))
+    ui.consitutioncreate.setText(str(ge.player.constitution))
+    ui.intelligence_create.setText(str(ge.player.intelligence))
+    ui.strength_create.setText(str(ge.player.strength))
+    ui.willpower_create.setText(str(ge.player.willpower))
 
 
 if __name__ == '__main__':
