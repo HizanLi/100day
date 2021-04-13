@@ -6,6 +6,6 @@ from src.Event.mainEvent import mainEvent
 
 class buyBook(mainEvent):
     event_type = 2
-
+    #use iter method to return story
     def get_event_info(self, date, character, info):
         super(buyBook, self).get_event_info(date,character,info)

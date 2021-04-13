@@ -8,7 +8,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from functools import partial
 
-from ui import createGame,gameWindow
+from ui import createGame, gameWindow
 
 
 class game(object):
@@ -58,6 +58,7 @@ def main():
     creat_player(ge)
     print(ge.player.get_character_status())
 
+
 def creat_player(ge):
     app = QApplication(sys.argv)
     mainWindow = QMainWindow()
@@ -76,11 +77,12 @@ def creat_player(ge):
     ge.initialize_player(name, gender, "normal", subject_type)
     create_attributes(ui, ge)
     ui.refresh.clicked.connect(partial(re_generate, ui, ge))
-    ui.start_game.clicked.connect(partial(start_game,ui,ge))
+    ui.start_game.clicked.connect(partial(start_game, ui, ge))
 
     sys.exit(app.exec_())
 
 
+# codes below are used when creating player
 def re_generate(ui, ge):
     name = ui.name.text()
     gender = ui.gender.currentText()
@@ -100,12 +102,15 @@ def create_attributes(ui, ge):
     ui.intelligence_create.setText(str(ge.player.intelligence))
     ui.strength_create.setText(str(ge.player.strength))
     ui.willpower_create.setText(str(ge.player.willpower))
+# codes above are used when creating player
 
-def start_game(ui,ge):
+
+def start_game(ui, ge):
     ui.create.hide()
     ui.playerName.setText(str(ge.player.name))
     update_attributes(ui, ge)
     update_mark(ui, ge)
+
 
 def update_mark(ui, ge):
     ui.chinese.setText(str(ge.player.chinese))
@@ -127,6 +132,7 @@ def update_attributes(ui, ge):
     ui.intelligence.setText(str(ge.player.intelligence))
     ui.strength.setText(str(ge.player.strength))
     ui.willpower.setText(str(ge.player.willpower))
+
 
 if __name__ == '__main__':
     main()
