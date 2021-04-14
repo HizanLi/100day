@@ -8,7 +8,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from functools import partial
 
-from ui import createGame, gameWindow
+from ui import createGame, gameWindow_style_two
 
 
 class game(object):
@@ -62,7 +62,7 @@ def main():
 def creat_player(ge):
     app = QApplication(sys.argv)
     mainWindow = QMainWindow()
-    ui = gameWindow.Ui_MainWindow()
+    ui = gameWindow_style_two.Ui_MainWindow()
     ui.setupUi(mainWindow)
     mainWindow.show()
 
