@@ -896,6 +896,78 @@ border-radius: 3;</string>
       </layout>
      </item>
      <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
+       <item>
+        <widget class="QLabel" name="label_32">
+         <property name="text">
+          <string>英语:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="english">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_11">
+       <item>
+        <widget class="QLabel" name="label_34">
+         <property name="text">
+          <string>政治:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="political">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_12">
+       <item>
+        <widget class="QLabel" name="label_36">
+         <property name="text">
+          <string>历史:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="history">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_13">
+       <item>
+        <widget class="QLabel" name="label_37">
+         <property name="text">
+          <string>地理:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="geography">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
       <layout class="QHBoxLayout" name="horizontalLayout_17">
        <item>
         <widget class="QLabel" name="label_46">
@@ -942,60 +1014,6 @@ border-radius: 3;</string>
        </item>
        <item>
         <widget class="QLabel" name="chemistry">
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_10">
-       <item>
-        <widget class="QLabel" name="label_32">
-         <property name="text">
-          <string>英语:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="english">
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_12">
-       <item>
-        <widget class="QLabel" name="label_36">
-         <property name="text">
-          <string>历史:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="history">
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_11">
-       <item>
-        <widget class="QLabel" name="label_34">
-         <property name="text">
-          <string>政治:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="political">
          <property name="text">
           <string>0</string>
          </property>
