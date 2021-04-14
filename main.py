@@ -107,10 +107,10 @@ def create_attributes(ui, ge):
 
 def start_game(ui, ge):
     ui.create.hide()
-    ge.player.name = ui.name.text()
-    ui.playerName.setText(str(ge.player.name))
-    update_attributes(ui, ge)
-    update_mark(ui, ge)
+    # ge.player.name = ui.name.text()
+    # ui.playerName.setText(str(ge.player.name))
+    # # update_attributes(ui, ge)
+    # # update_mark(ui, ge)
 
 
 def update_mark(ui, ge):
