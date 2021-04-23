@@ -111,7 +111,6 @@ def start_game(ui, ge):
     ui.storyBox.appendPlainText("系统：你的名字是"+ge.player.name)
     ui.storyBox.appendPlainText("系统：你是某上海省实验中学的一名学生")
     ui.storyBox.appendPlainText("系统：你有一个青梅竹马，她学习成绩很好")
-    ui.storyBox.appendPlainText("系统：今天是八月三十一号，高三开学第一天")
     ui.storyBox.appendPlainText("系统：你们的故事从此开始")
     ui.storyBox.appendPlainText("")
 
