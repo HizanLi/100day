@@ -4,6 +4,7 @@ from src.Event.mainEvent import mainPlayer
 import datetime
 import copy
 import random
+import time
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from functools import partial
@@ -55,11 +56,6 @@ class game(object):
 
 def main():
     ge = game()
-    creat_player(ge)
-    print(ge.player.get_character_status())
-
-
-def creat_player(ge):
     app = QApplication(sys.argv)
     mainWindow = QMainWindow()
     ui = gameWindow_style_two.Ui_MainWindow()
@@ -78,6 +74,7 @@ def creat_player(ge):
     create_attributes(ui, ge)
     ui.refresh.clicked.connect(partial(re_generate, ui, ge))
     ui.start_game.clicked.connect(partial(start_game, ui, ge))
+
 
     sys.exit(app.exec_())
 
@@ -106,13 +103,18 @@ def create_attributes(ui, ge):
 
 
 def start_game(ui, ge):
-    #print(ge.player.get_character_status())
-
     ui.create_frame.hide()
     ge.player.name = ui.name.text()
     ui.playerName.setText(str(ge.player.name))
     update_attributes(ui, ge)
     update_mark(ui, ge)
+    ui.storyBox.appendPlainText("系统：你的名字是"+ge.player.name)
+    ui.storyBox.appendPlainText("系统：你是某上海省实验中学的一名学生")
+    ui.storyBox.appendPlainText("系统：你有一个青梅竹马，她学习成绩很好")
+    ui.storyBox.appendPlainText("系统：今天是八月三十一号，高三开学第一天")
+    ui.storyBox.appendPlainText("系统：你们的故事从此开始")
+    ui.storyBox.appendPlainText("")
+
 
 
 def update_mark(ui, ge):
