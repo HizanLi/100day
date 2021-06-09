@@ -52,7 +52,7 @@ class game(object):
 
     def start(self):
         pass
-
+    #asdasdaqwe
 
 def main():
     ge = game()
